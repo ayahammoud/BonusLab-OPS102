@@ -21,4 +21,6 @@ Let's see how many games you can win!
 ========================================="
 echo 
 
-
+MAX_GUESSES=6
+RANDOM_WORD="$(grep "^.....$" /usr/share/dict/words |  shuf -n 1)" 
+echo "the random word is: $RANDOM_WORD"
