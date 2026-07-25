@@ -19,14 +19,22 @@ Let's see how many games you can win!
 =========================================
 	       $(tput setab 5)Good luck!$(tput sgr0)
 ========================================="
-echo 
 
-MAX_GUESSES=6
+GUESS=1
 GUESSES_LEFT=6
-RANDOM_WORD="$(egrep "^[a-z]{5,8}$" /usr/share/dict/words | sort -R | head -n 1)" 
+GAME_START="
++---+
+|
+|
+|
+======"
 
-while [[ MAX_GUESS != 0 ]]
+RANDOM_WORD="$(egrep "^[a-z]{5,8}$" /usr/share/dict/words | sort -R | head -n 1)" 
+echo "$GAME_START"
+while [[ "$GUESSES_LEFT" != 0 ]]
 do
-	echo"you have have $MAX_GUESSES guesses."
-	((MAX_GUESSES--))
-	
+	read -p "Enter guess #$GUESS: " number
+	((GUESSES_LEFT--))
+	echo "you have have $GUESSES_LEFT guesses Left!"
+	((GUESS++))
+done
