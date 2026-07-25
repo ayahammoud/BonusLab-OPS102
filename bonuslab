@@ -22,5 +22,11 @@ Let's see how many games you can win!
 echo 
 
 MAX_GUESSES=6
-RANDOM_WORD="$(egrep "^[A-Z][a-z]{5,7}$" /usr/share/dict/words | sort -R | head -n 1)" 
-echo "the random word is: $RANDOM_WORD"
+GUESSES_LEFT=6
+RANDOM_WORD="$(egrep "^[a-z]{5,8}$" /usr/share/dict/words | sort -R | head -n 1)" 
+
+while [[ MAX_GUESS != 0 ]]
+do
+	echo"you have have $MAX_GUESSES guesses."
+	((MAX_GUESSES--))
+	
