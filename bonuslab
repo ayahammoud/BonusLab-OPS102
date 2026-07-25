@@ -1,1 +1,16 @@
-!#/bin/bash
+#!/bin/bash
+
+echo "
+=========================================
+         WELCOME TO HANGMAN!
+=========================================
+
+Guess the hidden word one letter at a time.
+
+Each incorrect guess brings the hangman
+closer to completion. Guess the word before
+you run out of attempts!
+
+=========================================
+	     Good luck!
+========================================="
