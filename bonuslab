@@ -29,12 +29,15 @@ GAME_START="
 |
 ======"
 
-RANDOM_WORD="$(egrep "^[a-z]{5,8}$" /usr/share/dict/words | sort -R | head -n 1)" 
+RANDOM_WORD="$(egrep "^[a-z]{5,8}$" /usr/share/dict/words | sort -R | head -n 1)"
+WORD_LENGTH="(echo "$RANDOM_WORD" | wc -c)"
+echo "the word is: $RANDOM_WORD, and the length is: $WORD_LENGTH"
+
 echo "$GAME_START"
 while [[ "$GUESSES_LEFT" != 0 ]]
 do
-	read -p "Enter guess #$GUESS: " number
+	read -p "Enter guess #$GUESS: " letter_entered
+	((GUESS++))
 	((GUESSES_LEFT--))
 	echo "you have have $GUESSES_LEFT guesses Left!"
-	((GUESS++))
 done
