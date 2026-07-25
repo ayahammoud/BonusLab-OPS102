@@ -2,15 +2,23 @@
 
 echo "
 =========================================
-         WELCOME TO HANGMAN!
+  	  $(tput setab 5)WELCOME TO HANGMAN!$(tput sgr0)
 =========================================
 
-Guess the hidden word one letter at a time.
+A secret word has been chosen!
 
-Each incorrect guess brings the hangman
-closer to completion. Guess the word before
-you run out of attempts!
+Can you uncover it before the hangman is
+fully drawn?
+
+Enter one letter at a time. Correct guesses
+reveal the word, while incorrect guesses
+cost you one attempt.
+
+Let's see how many games you can win!
 
 =========================================
-	     Good luck!
+	       $(tput setab 5)Good luck!$(tput sgr0)
 ========================================="
+echo 
+
+
